@@ -4,25 +4,40 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/Style.css" th:href="@{/css/styles.css}">
 </head>
 <body>
-
+<h1>Exercise 1</h1>
 <div id="d1" style="width: 100px;margin: 1px;">&nbsp;</div>
 <div id="d2" style="width: 100px;margin: 1px;">&nbsp;</div>
 <div id="d3" style="width: 100px;margin: 1px;">&nbsp;</div>
 <button id="color-button">Change colors!</button>
+<br><br>
+<a href="javascript:history.back()"><button>Back</button></a>
+<h1>Reflections</h1>
+<div id="reflections">
+    With the QuerySelectorAll and using a for loop on the nodeList you can change the colors of all the divs on load. <br>
+    Afterwards queryselector on individual id's allow to change their individual color.
+    A randomizer could be made every time button is pressed so the colors keep changing.
+</div>
 
 
 <script>
-    document.querySelectorAll("div").element.style.backgroundColor("blue")
+    const divs = document.querySelectorAll("div");
+    for(const div of divs){
+        div.style.backgroundColor = "blue";
+    }
+    document.querySelector("#reflections").style.backgroundColor = "white";
+
     let button = document.querySelector("#color-button")
     button.addEventListener("click", changeDivColor)
 
     function changeDivColor(){
-        document.querySelector("#d1").element.style.backgroundColor("red")
-        document.querySelector("#d2").element.style.backgroundColor("yellow")
-        document.querySelector("#d3").element.style.backgroundColor("green")
+        document.querySelector("#d1").style.backgroundColor = "red";
+        document.querySelector("#d2").style.backgroundColor = "yellow";
+        document.querySelector("#d3").style.backgroundColor = "green";
     }
+
 </script>
 </body>
 </html>

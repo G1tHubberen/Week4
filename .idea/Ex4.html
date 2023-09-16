@@ -4,18 +4,42 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" type="text/css" href="css/Style.css" th:href="@{/css/styles.css}">
 </head>
 <body>
-    <select id="car-selector">
-        <!-- Options will be populated by JavaScript -->
-      </select>
-      <h2>Selected Brand</h2>
-      <h4 id="car-make"></h4>
-      
-      <script>
-      const cars = ["Ford", "WW", "Toyota", "Volvo"]; //Assume this was fechedfrom the backend
-      //TODO 
-      </script>
-      
+<h1>Exercise 4</h1>
+<select id="car-selector">
+    <!-- Options will be populated by JavaScript -->
+</select>
+<h2>Selected Brand</h2>
+<h4 id="car-make">Ford</h4>
+<br><br>
+<a href="javascript:history.back()"><button>Back</button></a>
+<h1>Reflections</h1>
+<div>
+    Selector would primarily be used when you want specific input into your backend, and leaving the user no other choices. 10 options would probably be max amount of choices for a selector.
+    <br>
+    To add the selectors we run a forEach on the list, and create options with the .createElement("option"). Each option can then be given the value and text of each car.
+
+</div>
+<script>
+    const cars = ["Ford", "VW", "Toyota", "Volvo"]; //Assume this was fechedfrom the backend
+    const selector = document.querySelector("#car-selector");
+    const carMake = document.querySelector("#car-make");
+
+    const carOptions = cars.forEach(car => {
+        const option = document.createElement("option");
+        option.value = car;
+        option.textContent = car;
+        selector.appendChild(option);
+    });
+
+    selector.addEventListener("change", function() {
+        const selectedCar = selector.value;
+        carMake.textContent = selectedCar;
+    })
+
+</script>
+
 </body>
 </html>

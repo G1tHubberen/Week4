@@ -4,11 +4,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <link rel="stylesheet" type="text/css" href="css/Style.css" th:href="@{/css/styles.css}">
 </head>
-<style>
-  .my-div {width: 25px; height: 25px;background-color:red; margin:1px;}
-</style>
+
 <body>
+<h1>Exercise 2</h1>
 <div id="outer">
   <div id="div1" class="my-div"></div>
   <div id="div2" class="my-div"></div>
@@ -25,14 +25,19 @@
   <div id="div13" class="my-div"></div>
 </div>
 <p id="id-text"></p>
+<br><br>
+<a href="javascript:history.back()"><button>Back</button></a>
+<h1>Reflections</h1>
+<div>
+  Event bubbling means that when an event occurs, this event "bubbles" to the nearest eventListener. <br>
+  When clicking one of these red div's the event moves to the nearest listener which is on the outer box which contains all of them. <br>
+  The method then uses evt.target.id to find the specific div id that sent the event originally.
+</div>
+
 <script>
   function printDiv(evt) {
     let divId = evt.target.id;
-    <<<<<<< HEAD
-            document.querySelector("#id-text").innerHTML = divId;
-  =======
-            document.querySelector("#id-text").innerHTML =divId;
-  >>>>>>> d2f5b6b5b0b6b0b0b0b0b0b0b0b0b0b0b0b0b0b0
+    document.querySelector("#id-text").innerHTML = divId;
   }
 
   let allDiv = document.querySelector("#outer");
