@@ -28,10 +28,14 @@
 <br><br>
 <a href="javascript:history.back()"><button>Back</button></a>
 <h1>Reflections</h1>
-<div>
-  Event bubbling means that when an event occurs, this event "bubbles" to the nearest eventListener. <br>
-  When clicking one of these red div's the event moves to the nearest listener which is on the outer box which contains all of them. <br>
-  The method then uses evt.target.id to find the specific div id that sent the event originally.
+<div  class="reflect">
+  Initially, adding click handlers to divs for individual console outputs is straightforward, thanks to unique ids. <br>
+  However, as divs multiply, efficiency diminishes. Leveraging event bubbling within an <br>
+  outer parent div simplifies handling, creating concise code and improving scalability. <br>
+  Outputting results to an empty paragraph tag enhances user interaction through the innerText property, enhancing accessibility.<br>
+  Event bubbling efficiently directs events to the nearest event listener, as seen with red divs within an outer container. <br>
+  Utilizing evt.target.id, the specific div id responsible for the event is easily identified, <br>
+  highlighting the power of event bubbling in managing complex interactions.
 </div>
 
 <script>
